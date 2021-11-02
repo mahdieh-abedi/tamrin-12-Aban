@@ -17,7 +17,7 @@ const obj = {
 
 function contain(object, input) {
     let arr=Object.values(object)
-    for (let i = 0; i <= Object.values(object).length; i++) {
+    for (let i = 0; i < Object.values(object).length; i++) {
         if (arr[i] === input) {
             return true
         }

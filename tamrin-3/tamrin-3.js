@@ -2,19 +2,23 @@
 //     [[[5], 3], 0, 2, ['foo'], [], [4, [5.1, 6]]]
 // 6 را برگرداند
 const arr = [[[5], 3], 0, 2, ['foo'], [], [4, [5.1, 6]]]
+let result = []
+let int = 0
 
 function findInteger(input) {
-    let result = []
-    for (let i = 0; i < input.length; i++) {
-        if (Array.isArray(input[i])!==true && Number.isInteger(input[i]) === true) {
-            result.push(input[i])
-        }
-       if(Array.isArray(input[i])===true) {
-           input=input[i]
-           return findInteger(input[i])
-       }
+     result = []
+    if (input.length === 0) {
+        return int
     }
-    return result
+    for (let value of input) {
+        if (Number.isInteger(value) === true) {
+            int++
+        }
+        if(typeof value==='object'){
+            result=[...result,...value]
+        }
+    }
+    return findInteger(result)
 }
 
 console.log(findInteger(arr))

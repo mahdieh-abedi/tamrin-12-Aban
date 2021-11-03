@@ -27,7 +27,7 @@ function contain(object, input) {
     }
     return false
 }
-console.log(contain(obj, 20))
+console.log(contain(obj, 21))
 console.log(contain(obj, 'hi'))
 
 
